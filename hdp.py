@@ -8,8 +8,8 @@ df = pd.read_csv('dataset.csv')
 # print(df.head())
 # df = df.dropna("Unnamed: 0", axis=1)
 
-x_df = df.drop("target", axis=1)
-y_df = df["target"]
+x_df = df.drop("heart.disease", axis=1)
+y_df = df["heart.disease"]
 
 
 x_train, x_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.3, random_state=42)
@@ -26,4 +26,4 @@ print('MSE between y_test and predicted value:', np.mean((pediction_test - y_tes
 # save the model to disk
 pickle.dump(model, open('model.pkl', 'wb'))
 model = pickle.load(open('model.pkl', 'rb'))
-print(model.predict([[63, 1, 3, 145, 233, 1, 0, 150, 0, 2.3, 0, 0, 1]]))
+print(model.predict([[20.1, 56.3]]))
