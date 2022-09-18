@@ -1,17 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Heart Disease Prediction</title>
 </head>
-<body>
-    <h1>Score Prediction</h1>
-    <p> Enter the number of hours you studied </p>
+    <body style="background: rgb(255, 255, 255);">
+        <div class="login">
+            <h1 style="color:rgb(0, 0, 0);">Heart Disease Prediction</h1>
+            <form action="{{url_for('predict')}}" method="POST">
+                <input type="text" name="percent biking" placeholder="percent population biking" required="required" />
+                <input type="text" name="percent smoking" placeholder="percent population smoking" required="required" />
 
-    <form action="/", method="post"> 
-        <input type="number" name="hours" placeholder="Number of Hours Studied">
-        <input type="submit" value="Submit">
-    </form>
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            </form>
+
+
+            <br>
+            <br>
+            <h4 style="color:rgb(0, 0, 0);">Prediction: {{prediction_text}}</h4>
+
+        </div>
+    </body>
 </html>
